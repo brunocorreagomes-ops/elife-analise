@@ -69,35 +69,56 @@ export default function App() {
       </nav>
 
       {/* Hero Cover Zone */}
-      <header className="bg-[#193E39] text-white py-16 md:py-24 px-6 relative overflow-hidden print:bg-slate-900 print:text-white print:py-8">
-        {/* Subtle circles */}
+      <header className="bg-[#193E39] text-white py-16 md:py-24 px-6 relative overflow-hidden print:bg-slate-900 print:text-white print:py-12">
+        {/* Subtle decorative circles */}
         <div className="absolute top-[-100px] right-[-100px] w-96 h-96 bg-[#06A791]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-80px] left-[-80px] w-80 h-80 bg-[#DF5CBD]/800 rounded-full blur-3xl pointer-events-none opacity-10" />
+        <div className="absolute bottom-[-80px] left-[-80px] w-80 h-80 bg-[#DF5CBD]/10 rounded-full blur-3xl pointer-events-none opacity-25" />
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
           
-          <div className="md:col-span-8 space-y-6">
+          {/* Left Column: Majestic Brand Centerpiece (Large Symbol & Logo) */}
+          <div className="md:col-span-8 space-y-8">
             <div className="inline-flex items-center gap-2 bg-[#06A791]/20 border border-[#06A791]/30 px-3 py-1.5 rounded-full text-xs text-teal-300 font-semibold tracking-wider">
               <Sparkles className="w-3.5 h-3.5 text-amber-300 fill-amber-300" /> Relatório Estratégico Exclusivo
             </div>
 
-            <div className="space-y-4">
-              <span className="text-[10px] font-bold tracking-widest text-[#06A791] uppercase block">
+            <div className="space-y-6">
+              <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#06A791] uppercase block">
                 Presença Digital, SEO & Posicionamento
               </span>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 bg-white/95 p-4 rounded-2xl shadow-xl border border-white/10 w-fit max-w-full">
-                <div className="flex items-center gap-3.5">
-                  <div className="bg-gradient-to-br from-[#193E39]/5 to-transparent p-2.5 rounded-xl border border-slate-100 flex items-center justify-center shadow-2xs">
-                    <img src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" alt="Símbolo Oficial Elife" className="w-10 h-10 object-contain select-none transition-transform hover:scale-105 duration-355" referrerPolicy="no-referrer" />
+              
+              {/* Premium Big Hero Branding Block */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8 bg-white/95 p-6 sm:p-8 rounded-3xl shadow-xl border border-white/10 w-fit max-w-full">
+                <div className="flex flex-col sm:flex-row items-center gap-6">
+                  {/* Majestic Master Symbol */}
+                  <div className="bg-gradient-to-br from-[#193E39]/10 via-[#1e4e48]/5 to-transparent p-5 rounded-2xl border border-slate-150 shadow-sm flex items-center justify-center transition-transform hover:scale-105 duration-300">
+                    <img 
+                      src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" 
+                      alt="Símbolo Oficial Elife Fitness" 
+                      className="w-24 h-24 sm:w-28 sm:h-28 object-contain select-none filter drop-shadow-md" 
+                      referrerPolicy="no-referrer" 
+                    />
                   </div>
-                  <div className="w-px h-10 bg-slate-250 hidden sm:block" />
-                  <div className="flex flex-col justify-center">
-                    <img src="https://i.ibb.co/xSHy6LzN/elife-logo.png" alt="Logotipo Oficial Elife" className="h-6.5 max-w-[140px] sm:max-w-none object-contain select-none brightness-95" referrerPolicy="no-referrer" />
-                    <span className="text-[8.5px] font-bold text-slate-400 tracking-widest uppercase mt-1 block">Identidade Corporativa</span>
+                  
+                  <div className="w-px h-20 bg-slate-200/80 hidden sm:block" />
+                  
+                  {/* Logotype Display */}
+                  <div className="flex flex-col justify-center text-center sm:text-left space-y-2">
+                    <img 
+                      src="https://i.ibb.co/xSHy6LzN/elife-logo.png" 
+                      alt="Logotipo Oficial Elife Fitness" 
+                      className="h-10 sm:h-12 max-w-[200px] sm:max-w-none object-contain select-none brightness-95" 
+                      referrerPolicy="no-referrer" 
+                    />
+                    <div className="space-y-0.5">
+                      <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase block">Identidade de Marca Homologada</span>
+                      <span className="text-[9px] font-medium text-slate-400 block">Indaiatuba, SP</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              <p className="text-slate-300/80 text-sm max-w-lg leading-relaxed pt-1">
+
+              <p className="text-slate-300/80 text-sm sm:text-base max-w-2xl leading-relaxed pt-2">
                 Análise aprofundada de posicionamento, indexação de mecanismos de busca locais e mapeamento comercial em Indaiatuba, SP.
               </p>
             </div>
@@ -106,7 +127,7 @@ export default function App() {
             <div className="flex flex-wrap gap-3 pt-2 print:hidden pb-1">
               <button
                 onClick={handlePrint}
-                className="text-xs font-extrabold text-white bg-[#06A791] hover:bg-[#06E1C4]/10 hover:text-[#06E1C4] border border-[#06A791]/40 px-5 py-3 rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm shadow-emerald-950/20 duration-150"
+                className="text-xs font-extrabold text-white bg-[#06A791] hover:bg-[#068472] border border-[#06A791]/40 px-5 py-3.5 rounded-xl transition-all flex items-center gap-2.5 cursor-pointer shadow-md shadow-emerald-950/20"
               >
                 <FileText className="w-4 h-4 text-emerald-400" /> Gerar PDF do Diagnóstico Completo (A4)
               </button>
@@ -133,7 +154,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Score Circle Card */}
+          {/* Right Column: Score Circle Card */}
           <div className="md:col-span-4 flex justify-center md:justify-end">
             <div className="bg-slate-900/45 border border-slate-800 backdrop-blur-xs p-6 rounded-3xl text-center w-full max-w-[240px] space-y-3 shadow-md">
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">

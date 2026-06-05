@@ -119,10 +119,10 @@ export default function PackageCard() {
               href={getWhatsAppLinkForPromo()}
               target="_blank"
               referrerPolicy="no-referrer"
-              className="w-full bg-[#06A791] hover:bg-[#06C1A7] text-white font-sans font-extrabold text-sm py-4 px-6 rounded-xl inline-flex items-center justify-center gap-2.5 transition-all shadow-md cursor-pointer hover:-translate-y-0.5 group active:translate-y-0"
+              className="w-full bg-gradient-to-r from-[#DF5CBD] to-[#f46ece] hover:from-[#f46ece] hover:to-[#ff8fe1] text-white font-sans font-black text-sm py-4 px-6 rounded-xl inline-flex items-center justify-center gap-2.5 transition-all shadow-lg hover:shadow-xl shadow-pink-500/10 cursor-pointer duration-200 hover:-translate-y-0.5 group active:translate-y-0"
             >
               <Phone className="w-4 h-4 fill-white" />
-              Garantir Vaga no Plano Parceria
+              Ativar Presença Digital da Elife ✨
               <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
