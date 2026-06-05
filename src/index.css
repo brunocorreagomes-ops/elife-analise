@@ -60,7 +60,7 @@ body {
 @media print {
   @page {
     size: A4 landscape;
-    margin: 12mm 15mm 12mm 15mm;
+    margin: 8mm 10mm 8mm 10mm;
   }
   
   body {
@@ -68,8 +68,9 @@ body {
     color: #1e293b !important;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    zoom: 90% !important; /* Reduces the rendering size of the whole page by 10% */
   }
-
+  
   /* Ocultar elementos estritamente dinâmicos ou de interface na geração do PDF */
   nav,
   button,
@@ -104,8 +105,8 @@ body {
     break-inside: avoid;
     border: 1px solid #e2e8f0 !important;
     border-radius: 12px !important;
-    padding: 16px 20px !important;
-    margin-bottom: 16px !important;
+    padding: 12px 18px !important;
+    margin-bottom: 12px !important;
     box-shadow: none !important;
   }
 
@@ -119,7 +120,7 @@ body {
     page-break-after: always;
     break-after: page;
     min-height: auto !important;
-    padding: 30px 24px !important;
+    padding: 24px 20px !important;
     background: #193E39 !important;
     color: white !important;
     print-color-adjust: exact;
