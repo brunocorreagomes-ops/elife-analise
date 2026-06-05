@@ -42,11 +42,17 @@ export default function App() {
       {/* Upper Navigation Rail */}
       <nav className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200/60 z-40 px-4 py-3.5 print:hidden">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 sm:gap-3.5">
             <span className="font-sans font-black text-sm tracking-widest text-[#193E39] uppercase">
               Orvalia Studio
             </span>
-            <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 border border-slate-200">
+            <span className="text-slate-300 select-none text-xs">|</span>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-slate-50 to-white border border-slate-200/50 px-2.5 py-1 rounded-lg shadow-2xs">
+              <img src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" alt="Símbolo Elife" className="w-5.5 h-5.5 object-contain select-none" referrerPolicy="no-referrer" />
+              <div className="w-px h-3.5 bg-slate-200" />
+              <img src="https://i.ibb.co/xSHy6LzN/elife-logo.png" alt="Elife Fitness" className="h-3.5 object-contain select-none brightness-95" referrerPolicy="no-referrer" />
+            </div>
+            <span className="text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 border border-slate-200 hidden sm:inline-block">
               Diagnóstico
             </span>
           </div>
@@ -75,14 +81,23 @@ export default function App() {
               <Sparkles className="w-3.5 h-3.5 text-amber-300 fill-amber-300" /> Relatório Estratégico Exclusivo
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-4">
               <span className="text-[10px] font-bold tracking-widest text-[#06A791] uppercase block">
                 Presença Digital, SEO & Posicionamento
               </span>
-              <h1 className="font-sans font-extrabold text-4xl sm:text-6xl tracking-tight leading-none text-white">
-                Elife <span className="text-[#06A791]">Fitness</span>
-              </h1>
-              <p className="text-slate-300/80 text-sm max-w-lg leading-relaxed pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 bg-white/95 p-4 rounded-2xl shadow-xl border border-white/10 w-fit max-w-full">
+                <div className="flex items-center gap-3.5">
+                  <div className="bg-gradient-to-br from-[#193E39]/5 to-transparent p-2.5 rounded-xl border border-slate-100 flex items-center justify-center shadow-2xs">
+                    <img src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" alt="Símbolo Oficial Elife" className="w-10 h-10 object-contain select-none transition-transform hover:scale-105 duration-355" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="w-px h-10 bg-slate-250 hidden sm:block" />
+                  <div className="flex flex-col justify-center">
+                    <img src="https://i.ibb.co/xSHy6LzN/elife-logo.png" alt="Logotipo Oficial Elife" className="h-6.5 max-w-[140px] sm:max-w-none object-contain select-none brightness-95" referrerPolicy="no-referrer" />
+                    <span className="text-[8.5px] font-bold text-slate-400 tracking-widest uppercase mt-1 block">Identidade Corporativa</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-slate-300/80 text-sm max-w-lg leading-relaxed pt-1">
                 Análise aprofundada de posicionamento, indexação de mecanismos de busca locais e mapeamento comercial em Indaiatuba, SP.
               </p>
             </div>
@@ -173,7 +188,28 @@ export default function App() {
               </blockquote>
             </div>
 
-            <div className="md:col-span-5 bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-4">
+            <div className="md:col-span-5 bg-slate-50 border border-slate-100 rounded-2xl p-5 lg:p-6 space-y-5">
+              {/* Official Branding Asset Showcase */}
+              <div className="bg-white border border-slate-150/80 rounded-xl p-4.5 space-y-3.5 shadow-sm">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-teal-800 block border-b border-slate-100 pb-1.5 flex items-center gap-1.5 font-sans">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DF5CBD]" /> Ativos Visuais Homologados
+                </span>
+                <div className="grid grid-cols-2 gap-3.5">
+                  <div className="flex flex-col items-center justify-between p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:border-teal-200/50 transition-all group">
+                    <div className="bg-white p-2.5 rounded-lg border border-slate-150/40 shadow-2xs h-16 w-16 flex items-center justify-center transition-all group-hover:shadow-xs">
+                      <img src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" alt="Símbolo Elife" className="h-10 w-10 object-contain group-hover:scale-105 transition-transform duration-300" referrerPolicy="no-referrer" />
+                    </div>
+                    <span className="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest mt-2 px-1 block text-center">Símbolo Borboleta</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-between p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:border-teal-200/50 transition-all group">
+                    <div className="bg-white p-2.5 rounded-lg border border-slate-150/40 shadow-2xs h-16 w-full flex items-center justify-center transition-all group-hover:shadow-xs">
+                      <img src="https://i.ibb.co/xSHy6LzN/elife-logo.png" alt="Logotipo Elife" className="h-5.5 object-contain my-auto group-hover:scale-105 transition-transform duration-300" referrerPolicy="no-referrer" />
+                    </div>
+                    <span className="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest mt-2 px-1 block text-center">Logotipo Principal</span>
+                  </div>
+                </div>
+              </div>
+
               <h4 className="font-sans font-extrabold text-sm text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
                 <Info className="w-4 h-4 text-teal-600" /> Principais Conclusões
               </h4>
