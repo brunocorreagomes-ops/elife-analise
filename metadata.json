@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Diagnóstico Elife Fitness",
+  "description": "Plano estratégico de branding, presença digital, SEO e busca de IA (GEO) para a marca Elife Fitness por Orvalia Studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

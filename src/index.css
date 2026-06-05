@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,305;1,400&family=Syne:wght@400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Bai Jamjuree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", sans-serif;
+}
+
+/* Regras avançadas de impressão técnica para geração de PDF limpo */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+  
+  body {
+    background: #ffffff !important;
+    color: #1e293b !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Ocultar elementos estritamente dinâmicos ou de interface na geração do PDF */
+  nav,
+  button,
+  .print\:hidden,
+  #orvalia-ai-chat,
+  #calc-opt-traffic,
+  #calc-opt-domain,
+  #sim-toggle-gmn,
+  #sim-toggle-diretorios,
+  #sim-toggle-instagram,
+  #sim-toggle-site,
+  #sim-toggle-schema,
+  #sim-toggle-llms,
+  #sim-toggle-artigos,
+  #sim-toggle-parcerias,
+  #whatsapp-cta-link,
+  #plan-select-ativacao,
+  #plan-select-gestao,
+  #plan-select-crescimento {
+    display: none !important;
+  }
+
+  /* Expandir blocos em largura total para se adaptarem perfeitamente à folha A4 */
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: none !important;
+  }
+
+  /* Forçar quebras de páginas em seções-chave para o PDF ficar organizado */
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  header {
+    page-break-after: always;
+    break-after: page;
+    min-height: auto !important;
+    padding: 30px 24px !important;
+    background: #193E39 !important;
+    color: white !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
