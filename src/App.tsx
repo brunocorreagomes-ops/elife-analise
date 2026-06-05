@@ -180,28 +180,92 @@ export default function App() {
 
           {/* Right Column: Premium Score Display */}
           <div className="md:col-span-4 flex justify-center md:items-start md:justify-end h-full pt-8 md:pt-0">
-            <div className="bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.08] backdrop-blur-3xl p-8 rounded-[2.5rem] text-center w-full max-w-[280px] flex flex-col items-center justify-center gap-6 shadow-2xl relative overflow-hidden group opacity-0 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#DF5CBD]/50 to-transparent" />
+            <div className="bg-gradient-to-b from-white/[0.06] to-transparent border border-white/[0.1] backdrop-blur-3xl p-6 rounded-[2rem] text-center w-full max-w-[280px] flex flex-col items-center justify-center gap-5 shadow-2xl relative overflow-hidden group opacity-0 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#DF5CBD] to-transparent" />
               
-              <div className="space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block">
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#06E1C4] block">
                   Autoridade Local
                 </span>
-                <span className="text-[9px] font-medium text-slate-500 tracking-wider">
-                  Score de Presença
+                <span className="text-[9px] font-medium text-slate-400 tracking-wider">
+                  Auditoria de Presença
                 </span>
               </div>
               
-              <div className="flex items-start justify-center relative">
-                <span className="font-sans font-black text-7xl sm:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 tracking-tighter leading-none relative z-10">
-                  3<span className="text-5xl sm:text-6xl text-slate-500">.2</span>
-                </span>
-                <div className="absolute blur-2xl bg-[#DF5CBD]/20 w-24 h-24 rounded-full z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+              {/* Premium Circular SVG Score Gauge */}
+              <div className="relative w-36 h-36 flex items-center justify-center">
+                <svg className="w-full h-full -rotate-90 origin-center" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#DF5CBD" />
+                      <stop offset="100%" stopColor="#ff4b6b" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Track ring */}
+                  <circle 
+                    cx="50" 
+                    cy="50" 
+                    r="42" 
+                    className="stroke-white/[0.05]" 
+                    strokeWidth="7" 
+                    fill="transparent" 
+                  />
+                  
+                  {/* Active progress ring */}
+                  <circle 
+                    cx="50" 
+                    cy="50" 
+                    r="42" 
+                    stroke="url(#scoreGradient)" 
+                    strokeWidth="7" 
+                    fill="transparent" 
+                    strokeDasharray="263.89" 
+                    strokeDashoffset={263.89 * (1 - 0.32)} 
+                    strokeLinecap="round"
+                    className="transition-all duration-1000 ease-out"
+                  />
+                </svg>
+                
+                {/* Score numbers centered inside the circle, perfectly aligned */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="flex items-baseline leading-none select-none">
+                    <span className="text-4xl sm:text-5xl font-black tracking-tight bg-gradient-to-b from-white via-slate-100 to-slate-200 bg-clip-text text-transparent">
+                      3
+                    </span>
+                    <span className="text-2xl sm:text-3xl font-black text-[#DF5CBD] tracking-tight">
+                      .2
+                    </span>
+                  </div>
+                  <span className="text-[8px] text-slate-500 font-mono tracking-widest mt-1 uppercase">
+                    Score Geral
+                  </span>
+                </div>
+                
+                {/* Glowing glow behind number */}
+                <div className="absolute blur-2xl bg-[#DF5CBD]/15 w-16 h-16 rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
 
-              <div className="bg-[#DF5CBD]/10 border border-[#DF5CBD]/30 text-[#DF5CBD] font-bold text-xs py-2 px-4 rounded-full inline-block backdrop-blur-md shadow-lg shadow-[#DF5CBD]/10 tracking-wider">
+              {/* Status Badge */}
+              <div className="bg-[#DF5CBD]/10 border border-[#DF5CBD]/20 text-[#DF5CBD] font-bold text-[10px] py-1.5 px-4 rounded-full inline-flex items-center gap-1.5 backdrop-blur-md shadow-xs tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DF5CBD] animate-pulse" />
                 Risco de Invisibilidade
               </div>
+
+              {/* Local Benchmarks Integration */}
+              <div className="grid grid-cols-2 gap-3 w-full pt-4 border-t border-white/[0.06] text-[10px] font-sans font-medium text-slate-400">
+                <div className="text-center border-r border-white/[0.06] pr-2">
+                  <span className="block text-slate-500 uppercase tracking-widest text-[7px] mb-0.5">Média Local</span>
+                  <span className="text-slate-300 font-bold font-mono">6.5 / 10</span>
+                </div>
+                <div className="text-center pl-2">
+                  <span className="block text-slate-500 uppercase tracking-widest text-[7px] mb-0.5">Diagnóstico</span>
+                  <span className="text-rose-400 font-bold tracking-wider uppercase text-[8px] flex items-center justify-center gap-1">
+                    <span className="w-1 h-1 rounded-full bg-rose-500 animate-pulse" /> Crítico
+                  </span>
+                </div>
+              </div>
+
             </div>
           </div>
 
