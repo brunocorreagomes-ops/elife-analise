@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,305;1,400&family=Syne:wght@400;700;800&display=swap');
 @import "tailwindcss";
 
+:root {
+  color-scheme: light only;
+}
+
+body {
+  background-color: #F4F7F6;
+  color: #1e293b;
+}
+
 @theme {
   --font-sans: "Bai Jamjuree", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Syne", sans-serif;
