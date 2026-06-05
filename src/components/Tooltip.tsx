@@ -9,7 +9,7 @@ interface TooltipProps {
 
 export default function Tooltip({ content, children, icon = false }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const triggerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Position tooltip relative to viewport

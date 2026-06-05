@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { 
   Sparkles, Award, MapPin, Search, Calendar, ChevronRight, 
   HelpCircle, Printer, MessageCircle, AlertTriangle, Check, X,
-  ExternalLink, ArrowDown, ShieldAlert, FileText, Info
+  ExternalLink, ArrowDown, ShieldAlert, FileText, Info, Maximize, Minimize
 } from "lucide-react";
 
 import { INITIAL_SCORE_ITEMS } from "./data";
@@ -18,6 +18,7 @@ export default function App() {
   const [scoreItems] = useState(INITIAL_SCORE_ITEMS);
   const [printMode, setPrintMode] = useState(false);
   const [showPrintModal, setShowPrintModal] = useState(false);
+  const [isFocusMode, setIsFocusMode] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -59,12 +60,21 @@ export default function App() {
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <button
+              onClick={() => setIsFocusMode(!isFocusMode)}
+              className={`text-[10px] sm:text-xs font-bold px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-xs ${isFocusMode ? 'bg-[#06A791] text-white border-transparent' : 'bg-slate-50 text-[#193E39] border border-slate-200 hover:bg-slate-100'}`}
+              title="Modo Foco: leitura limpa e simplificada para texto"
+            >
+              {isFocusMode ? <Minimize className="w-3.5 sm:w-4 h-3.5 sm:h-4" /> : <Maximize className="w-3.5 sm:w-4 h-3.5 sm:h-4" />}
+              <span className="hidden sm:inline">{isFocusMode ? 'Desativar Foco' : 'Modo Foco'}</span>
+            </button>
             <button
               onClick={handlePrint}
-              className="text-xs font-extrabold text-[#193E39] bg-teal-50 border border-teal-150 px-4 py-2 rounded-xl hover:bg-teal-100 transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
+              className="text-[10px] sm:text-xs font-extrabold text-[#193E39] bg-teal-50 border border-teal-150 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl hover:bg-teal-100 transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
             >
-              <FileText className="w-4 h-4 text-teal-600" /> Gerar PDF do Diagnóstico
+              <FileText className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-teal-600" />
+              <span className="hidden sm:inline">Gerar PDF</span>
             </button>
           </div>
         </div>
@@ -85,15 +95,15 @@ export default function App() {
           <div className="md:col-span-8 flex flex-col items-start space-y-10">
             
             {/* Top Eyebrow */}
-            <div className="inline-flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] backdrop-blur-md px-4 py-2 rounded-full text-[10px] text-teal-300 font-bold uppercase tracking-[0.2em] shadow-2xl">
+            <div className="inline-flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] backdrop-blur-md px-4 py-2 rounded-full text-[10px] text-teal-300 font-bold uppercase tracking-[0.2em] shadow-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               <Sparkles className="w-4 h-4 text-[#DF5CBD] fill-[#DF5CBD]" /> Dossiê Estratégico Exclusivo
             </div>
 
             {/* Main Branding Header Container */}
-            <div className="space-y-6">
-              <h1 className="font-sans font-black text-5xl sm:text-6xl md:text-7xl tracking-[-0.03em] leading-[1.05] text-white">
-                Diagnóstico de <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06E1C4] to-[#DF5CBD]">
+            <div className="space-y-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+              <h1 className="font-sans font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[-0.03em] leading-[1.05] text-white">
+                Diagnóstico de <br className="hidden sm:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#06E1C4]">
                   Posicionamento Digital
                 </span>
               </h1>
@@ -103,7 +113,7 @@ export default function App() {
             </div>
             
             {/* Glossy Brand Identity Block */}
-            <div className="flex flex-col sm:flex-row sm:items-center bg-white/[0.02] backdrop-blur-2xl p-6 sm:p-8 rounded-[2rem] shadow-2xl border border-white/[0.08] w-full sm:w-auto relative group overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center bg-white/[0.02] backdrop-blur-2xl p-6 sm:p-8 rounded-[2rem] shadow-2xl border border-white/[0.08] w-full sm:w-auto relative group overflow-hidden opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
               <div className="absolute inset-0 bg-gradient-to-r from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 w-full relative z-10">
@@ -138,7 +148,7 @@ export default function App() {
             </div>
 
             {/* Actions & Meta Grid */}
-            <div className="w-full pt-4 space-y-8">
+            <div className="w-full pt-4 space-y-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
               <button
                 onClick={handlePrint}
                 className="text-xs font-black text-[#0B1E1A] bg-gradient-to-r from-[#06E1C4] to-[#06A791] hover:from-[#08F5D6] hover:to-[#06C1A7] px-8 py-4 rounded-xl transition-all flex items-center gap-3 cursor-pointer shadow-xl shadow-[#06A791]/20 hover:shadow-2xl hover:shadow-[#06A791]/30 hover:-translate-y-0.5 duration-300 print:hidden"
@@ -170,7 +180,7 @@ export default function App() {
 
           {/* Right Column: Premium Score Display */}
           <div className="md:col-span-4 flex justify-center md:items-start md:justify-end h-full pt-8 md:pt-0">
-            <div className="bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.08] backdrop-blur-3xl p-8 rounded-[2.5rem] text-center w-full max-w-[280px] flex flex-col items-center justify-center gap-6 shadow-2xl relative overflow-hidden group">
+            <div className="bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.08] backdrop-blur-3xl p-8 rounded-[2.5rem] text-center w-full max-w-[280px] flex flex-col items-center justify-center gap-6 shadow-2xl relative overflow-hidden group opacity-0 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#DF5CBD]/50 to-transparent" />
               
               <div className="space-y-1">
@@ -183,8 +193,8 @@ export default function App() {
               </div>
               
               <div className="flex items-start justify-center relative">
-                <span className="font-sans font-black text-8xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 tracking-tighter leading-none relative z-10">
-                  3<span className="text-6xl text-slate-500">.2</span>
+                <span className="font-sans font-black text-7xl sm:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 tracking-tighter leading-none relative z-10">
+                  3<span className="text-5xl sm:text-6xl text-slate-500">.2</span>
                 </span>
                 <div className="absolute blur-2xl bg-[#DF5CBD]/20 w-24 h-24 rounded-full z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
               </div>
@@ -201,10 +211,10 @@ export default function App() {
       {/* Sub line color-gradient bar separator */}
       <div className="h-1.5 bg-gradient-to-r from-teal-500 via-emerald-600 to-pink-500" />
 
-      <FloatingNav />
+      {!isFocusMode && <FloatingNav />}
 
       {/* Main Body */}
-      <main className="max-w-5xl mx-auto px-4 md:px-6 py-12 space-y-12 print:py-4">
+      <main className={`mx-auto px-4 md:px-6 py-12 space-y-12 print:py-4 transition-all duration-700 ease-in-out ${isFocusMode ? 'max-w-3xl focus-mode' : 'max-w-5xl'}`}>
 
         {/* 01 — Executive summary */}
         <section id="resumo" className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6 scroll-mt-24">
@@ -218,7 +228,7 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <div className="md:col-span-7 space-y-4">
+            <div className={`transition-all duration-500 ${isFocusMode ? 'md:col-span-12 space-y-6' : 'md:col-span-7 space-y-4'}`}>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 A marca <strong className="text-slate-800">Elife Fitness</strong> possui ativos visuais deslumbrantes. O <Tooltip content="Manual técnico que define regras visuais, paleta de cores e forma de uso da tipografia.">
                   <span className="cursor-help underline decoration-[#06A791]/30 underline-offset-4 font-bold text-[#193E39]">brandbook</span>
@@ -236,7 +246,7 @@ export default function App() {
               </blockquote>
             </div>
 
-            <div className="md:col-span-5 bg-slate-50 border border-slate-100 rounded-2xl p-5 lg:p-6 space-y-5">
+            <div className={`${isFocusMode ? 'hidden' : 'md:col-span-5 flex flex-col'} bg-slate-50 border border-slate-100 rounded-2xl p-5 lg:p-6 space-y-5`}>
               {/* Official Branding Asset Showcase */}
               <div className="bg-white border border-slate-150/80 rounded-xl p-4.5 space-y-3.5 shadow-sm">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-teal-800 block border-b border-slate-100 pb-1.5 flex items-center gap-1.5 font-sans">
@@ -291,12 +301,14 @@ export default function App() {
                 Indicadores de Maturidade Digital
               </h3>
             </div>
-            <span className="text-xs font-semibold text-slate-400 hidden sm:inline">
-              Clique em qualquer card para ver recomendações
-            </span>
+            {!isFocusMode && (
+              <span className="text-xs font-semibold text-slate-400 hidden sm:inline">
+                Clique em qualquer card para ver recomendações
+              </span>
+            )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 ${isFocusMode ? 'hidden' : ''}`}>
             {scoreItems.map((item, index) => (
               <MetricCard 
                 key={index} 
@@ -308,9 +320,11 @@ export default function App() {
         </section>
 
         {/* Score Simulator Component */}
-        <section className="print:hidden">
-          <ScoreSimulator />
-        </section>
+        {!isFocusMode && (
+          <section className="print:hidden">
+            <ScoreSimulator />
+          </section>
+        )}
 
         {/* 02 — Identidade de marca */}
         <section id="ativos" className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6 page-break-before scroll-mt-24">
@@ -453,8 +467,8 @@ export default function App() {
       {/* Corporate footer */}
       <footer className="border-t border-slate-200 bg-white py-12 px-6 text-center text-xs text-slate-400 space-y-4 print:bg-white print:text-black print:py-4">
         <div className="max-w-5xl mx-auto space-y-2">
-          <p className="font-sans font-extrabold text-base text-[#193E39] select-none tracking-widest">
-            Orvalia Studio
+          <p className="font-sans font-extrabold text-base text-[#193E39] select-none tracking-widest flex justify-center items-center gap-2">
+            Orvalia Studio <span className="text-teal-600 font-bold text-xs tracking-normal">| +55 11 97895-9567</span>
           </p>
           <p className="font-medium">
             Diagnóstico preparado exclusivamente para Elife Fitness por Orvalia Studio, Indaiatuba SP.

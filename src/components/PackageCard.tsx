@@ -5,7 +5,7 @@ export default function PackageCard() {
   const activePlan = PROPOSAL_PACKAGES[0]; // "Parceria Orvalia" is the only package now
 
   const getWhatsAppLinkForPromo = () => {
-    const phone = "5519999999999"; 
+    const phone = "5511978959567"; 
     const text = `Olá Orvalia Studio! Gostaria de fechar o *Plano Parceria Orvalia* para a Elife Fitness (R$ 800 em até 4x). Vamos marcar para alinhar o setup digital completo e o mês de postagens?`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
   };
