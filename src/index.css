@@ -10,6 +10,21 @@ body {
   color: #1e293b;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+  body, .bg-white {
+    background-color: #ffffff !important;
+  }
+  .bg-\[\#F4F7F6\] {
+    background-color: #F4F7F6 !important;
+  }
+  body, .text-slate-800, .text-slate-700, .text-slate-600 {
+    color: #1e293b !important; /* Forces dark text in dark mode context */
+  }
+}
+
 @layer utilities {
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
