@@ -31,10 +31,10 @@ export default function PackageCard() {
         <div className="absolute right-[-20px] top-[-20px] w-48 h-48 bg-[#06A791]/15 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute left-[-20px] bottom-[-20px] w-36 h-36 bg-[#DF5CBD]/10 rounded-full blur-xl pointer-events-none" />
 
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch relative z-10">
+        <div className="flex flex-col lg:flex-row gap-8 items-stretch relative z-10 w-full">
           
           {/* Left info column: Plan Description & Features */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+          <div className="w-full lg:w-7/12 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div className="flex flex-wrap gap-2 items-center">
                 <span className="bg-[#DF5CBD] text-white text-[9.5px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider inline-flex items-center gap-1">
@@ -77,7 +77,7 @@ export default function PackageCard() {
           </div>
 
           {/* Right column: Action Pricing box */}
-          <div className="lg:col-span-5 bg-slate-950/50 border border-white/10 rounded-xl p-6 flex flex-col justify-between space-y-6 lg:min-w-[300px]">
+          <div className="w-full lg:w-5/12 bg-slate-950/50 border border-white/10 rounded-xl p-6 flex flex-col justify-between space-y-6 lg:min-w-[300px]">
             <div className="space-y-4">
               <div className="border-b border-white/10 pb-4">
                 <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mb-1">

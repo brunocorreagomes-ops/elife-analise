@@ -48,7 +48,7 @@ export default function TimelineBoard() {
         </div>
 
         {/* Phase Selectors */}
-        <div className="flex bg-slate-50 p-1.5 rounded-2xl border border-slate-100 gap-1 overflow-x-auto self-start">
+        <div className="flex bg-slate-50 p-1.5 rounded-2xl border border-slate-100 gap-1 overflow-x-auto self-start w-full sm:w-auto -mx-6 px-6 sm:mx-0 sm:px-0 hide-scrollbar">
           {STRATEGIC_PHASES.map((p) => (
             <button
               key={p.id}

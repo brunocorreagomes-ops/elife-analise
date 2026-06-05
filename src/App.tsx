@@ -185,7 +185,7 @@ export default function App() {
               
               <div className="space-y-1">
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block">
-                  Authoridade Local
+                  Autoridade Local
                 </span>
                 <span className="text-[9px] font-medium text-slate-500 tracking-wider">
                   Score de Presença

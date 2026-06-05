@@ -106,15 +106,15 @@ export default function CompetitorTable() {
         </div>
 
         {/* Competitor Grid on Right */}
-        <div className="lg:col-span-8 print:col-span-8 overflow-x-auto">
-          <table className="w-full text-left text-xs border-collapse">
+        <div className="lg:col-span-8 print:col-span-8 overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
+          <table className="w-full text-left text-xs border-collapse min-w-[550px]">
             <thead>
-              <tr className="border-b border-slate-100 text-slate-400 font-bold uppercase tracking-wider">
-                <th className="pb-3 pl-2">Rank</th>
-                <th className="pb-3">Concorrente</th>
-                <th className="pb-3">Site</th>
-                <th className="pb-3">Google Meu Negócio</th>
-                <th className="pb-3 text-right pr-2">Ação</th>
+              <tr className="border-b border-slate-100 text-slate-400 font-bold uppercase tracking-wider whitespace-nowrap">
+                <th className="pb-3 pl-2 w-12">Rank</th>
+                <th className="pb-3 min-w-[160px]">Concorrente</th>
+                <th className="pb-3 w-20">Site</th>
+                <th className="pb-3 w-36">Google Meu Negócio</th>
+                <th className="pb-3 text-right pr-2 w-28">Ação</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50 text-slate-700 font-medium">
@@ -148,23 +148,23 @@ export default function CompetitorTable() {
                       </div>
                     </td>
                     <td className="py-3">
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1.5 whitespace-nowrap">
                         {item.site.startsWith("❌") || item.site === "Não" ? (
-                          <X className="w-3.5 h-3.5 text-rose-500" />
+                          <X className="w-4 h-4 text-rose-500 flex-shrink-0" />
                         ) : (
-                          <Check className="w-3.5 h-3.5 text-emerald-500" />
+                          <Check className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                         )}
-                        <span className="hidden sm:inline">{item.site.replace("✅", "").replace("❌", "")}</span>
+                        <span>{item.site.replace("✅", "").replace("❌", "").trim()}</span>
                       </span>
                     </td>
                     <td className="py-3">
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1.5 whitespace-nowrap">
                         {item.gmn.startsWith("❌") || item.gmn === "Não" || item.gmn === "❌ Não possui" ? (
-                          <X className="w-3.5 h-3.5 text-rose-500" />
+                          <X className="w-4 h-4 text-rose-500 flex-shrink-0" />
                         ) : (
-                          <Check className="w-3.5 h-3.5 text-emerald-500" />
+                          <Check className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                         )}
-                        <span>{item.gmn.replace("✅", "").replace("❌", "").replace("Provável", "Disponível")}</span>
+                        <span>{item.gmn.replace("✅", "").replace("❌", "").replace("Provável", "Disponível").trim()}</span>
                       </span>
                     </td>
                     <td className="py-3 text-right pr-2">
