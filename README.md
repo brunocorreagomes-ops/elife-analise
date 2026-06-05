@@ -118,13 +118,7 @@ Ideal para implantar em 1 minuto se você precisa apenas do layout interativo e 
 ### Opção 2: Hospedagem no GitHub Pages
 Se você quer hospedar gratuitamente na infraestrutura nativa do GitHub:
 
-1. No seu `vite.config.ts`, adicione a propriedade `base` caso o repositório use subcaminhos de pasta (ex: `https://seu-usuario.github.io/diagnostico-elife-fitness/`):
-   ```typescript
-   export default defineConfig({
-     base: './', // Torna o caminho relativo para que os arquivos carreguem corretamente em subpastas ou domínios próprios
-     // ... demais configurações
-   });
-   ```
+1. (Opcional) A propriedade `base: './'` já está configurada por padrão no arquivo `vite.config.ts` deste projeto, garantindo que os estilos e scripts funcionem em qualquer subdiretório.
 2. Instalar a ferramenta de deploy de forma temporária no seu projeto:
    ```bash
    npm install gh-pages --save-dev
