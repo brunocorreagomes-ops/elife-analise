@@ -88,30 +88,31 @@ export default function App() {
               </span>
               
               {/* Premium Big Hero Branding Block */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8 bg-white/95 p-6 sm:p-8 rounded-3xl shadow-xl border border-white/10 w-fit max-w-full">
-                <div className="flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-center bg-white/95 p-6 sm:p-8 rounded-3xl shadow-xl border border-white/10 w-full sm:w-fit max-w-full box-border">
+                <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6 w-full">
                   {/* Majestic Master Symbol */}
-                  <div className="bg-gradient-to-br from-[#193E39]/10 via-[#1e4e48]/5 to-transparent p-5 rounded-2xl border border-slate-150 shadow-sm flex items-center justify-center transition-transform hover:scale-105 duration-300">
+                  <div className="bg-gradient-to-br from-[#193E39]/10 via-[#1e4e48]/5 to-transparent p-5 rounded-2xl border border-slate-150 shadow-sm flex items-center justify-center transition-transform hover:scale-105 duration-300 w-full sm:w-auto shrink-0">
                     <img 
                       src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" 
                       alt="Símbolo Oficial Elife Fitness" 
-                      className="w-24 h-24 sm:w-28 sm:h-28 object-contain select-none filter drop-shadow-md" 
+                      className="w-20 h-20 sm:w-28 sm:h-28 object-contain select-none filter drop-shadow-md mx-auto" 
                       referrerPolicy="no-referrer" 
                     />
                   </div>
                   
+                  <div className="w-16 h-px sm:w-px sm:h-20 bg-slate-200/80 block sm:hidden rounded-full opacity-60 my-1" />
                   <div className="w-px h-20 bg-slate-200/80 hidden sm:block" />
                   
                   {/* Logotype Display */}
-                  <div className="flex flex-col justify-center text-center sm:text-left space-y-2">
+                  <div className="flex flex-col justify-center text-center sm:text-left space-y-2.5 sm:space-y-2 w-full sm:w-auto">
                     <img 
                       src="https://i.ibb.co/xSHy6LzN/elife-logo.png" 
                       alt="Logotipo Oficial Elife Fitness" 
-                      className="h-10 sm:h-12 max-w-[200px] sm:max-w-none object-contain select-none brightness-95" 
+                      className="h-8 sm:h-12 w-auto max-w-[180px] sm:max-w-none object-contain select-none brightness-95 mx-auto sm:mx-0" 
                       referrerPolicy="no-referrer" 
                     />
                     <div className="space-y-0.5">
-                      <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase block">Identidade de Marca Homologada</span>
+                      <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase block leading-tight">Identidade de Marca Homologada</span>
                       <span className="text-[9px] font-medium text-slate-400 block">Indaiatuba, SP</span>
                     </div>
                   </div>
