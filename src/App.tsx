@@ -11,6 +11,8 @@ import ScoreSimulator from "./components/ScoreSimulator";
 import CompetitorTable from "./components/CompetitorTable";
 import TimelineBoard from "./components/TimelineBoard";
 import PackageCard from "./components/PackageCard";
+import FloatingNav from "./components/FloatingNav";
+import Tooltip from "./components/Tooltip";
 
 export default function App() {
   const [scoreItems] = useState(INITIAL_SCORE_ITEMS);
@@ -69,108 +71,126 @@ export default function App() {
       </nav>
 
       {/* Hero Cover Zone */}
-      <header className="bg-[#193E39] text-white py-16 md:py-24 px-6 relative overflow-hidden print:bg-slate-900 print:text-white print:py-12">
-        {/* Subtle decorative circles */}
-        <div className="absolute top-[-100px] right-[-100px] w-96 h-96 bg-[#06A791]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-80px] left-[-80px] w-80 h-80 bg-[#DF5CBD]/10 rounded-full blur-3xl pointer-events-none opacity-25" />
+      <header className="bg-gradient-to-br from-[#091513] via-[#0F2823] to-[#184039] text-white py-20 md:py-32 px-6 relative overflow-hidden print:bg-slate-900 print:text-white print:py-16">
+        {/* Subtle decorative glows */}
+        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[#06A791]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-[#DF5CBD]/10 rounded-full blur-[120px] pointer-events-none" />
+        
+        {/* Abstract geometric lines */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50 pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center relative z-10">
           
-          {/* Left Column: Majestic Brand Centerpiece (Large Symbol & Logo) */}
-          <div className="md:col-span-8 space-y-8">
-            <div className="inline-flex items-center gap-2 bg-[#06A791]/20 border border-[#06A791]/30 px-3 py-1.5 rounded-full text-xs text-teal-300 font-semibold tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-amber-300 fill-amber-300" /> Relatório Estratégico Exclusivo
+          {/* Left Column: Strong Agency Typography & Content */}
+          <div className="md:col-span-8 flex flex-col items-start space-y-10">
+            
+            {/* Top Eyebrow */}
+            <div className="inline-flex items-center gap-3 bg-white/[0.04] border border-white/[0.08] backdrop-blur-md px-4 py-2 rounded-full text-[10px] text-teal-300 font-bold uppercase tracking-[0.2em] shadow-2xl">
+              <Sparkles className="w-4 h-4 text-[#DF5CBD] fill-[#DF5CBD]" /> Dossiê Estratégico Exclusivo
             </div>
 
+            {/* Main Branding Header Container */}
             <div className="space-y-6">
-              <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#06A791] uppercase block">
-                Presença Digital, SEO & Posicionamento
-              </span>
+              <h1 className="font-sans font-black text-5xl sm:text-6xl md:text-7xl tracking-[-0.03em] leading-[1.05] text-white">
+                Diagnóstico de <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06E1C4] to-[#DF5CBD]">
+                  Posicionamento Digital
+                </span>
+              </h1>
+              <p className="text-slate-300/90 text-base sm:text-lg max-w-2xl leading-relaxed font-light">
+                Análise aprofundada de autoridade de marca, indexação de mecanismos de busca locais e mapeamento de lacunas comerciais em Indaiatuba, SP.
+              </p>
+            </div>
+            
+            {/* Glossy Brand Identity Block */}
+            <div className="flex flex-col sm:flex-row sm:items-center bg-white/[0.02] backdrop-blur-2xl p-6 sm:p-8 rounded-[2rem] shadow-2xl border border-white/[0.08] w-full sm:w-auto relative group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              {/* Premium Big Hero Branding Block */}
-              <div className="flex flex-col sm:flex-row sm:items-center bg-white/95 p-6 sm:p-8 rounded-3xl shadow-xl border border-white/10 w-full sm:w-fit max-w-full box-border">
-                <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6 w-full">
-                  {/* Majestic Master Symbol */}
-                  <div className="bg-gradient-to-br from-[#193E39]/10 via-[#1e4e48]/5 to-transparent p-5 rounded-2xl border border-slate-150 shadow-sm flex items-center justify-center transition-transform hover:scale-105 duration-300 w-full sm:w-auto shrink-0">
-                    <img 
-                      src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" 
-                      alt="Símbolo Oficial Elife Fitness" 
-                      className="w-20 h-20 sm:w-28 sm:h-28 object-contain select-none filter drop-shadow-md mx-auto" 
-                      referrerPolicy="no-referrer" 
-                    />
-                  </div>
-                  
-                  <div className="w-16 h-px sm:w-px sm:h-20 bg-slate-200/80 block sm:hidden rounded-full opacity-60 my-1" />
-                  <div className="w-px h-20 bg-slate-200/80 hidden sm:block" />
-                  
-                  {/* Logotype Display */}
-                  <div className="flex flex-col justify-center text-center sm:text-left space-y-2.5 sm:space-y-2 w-full sm:w-auto">
-                    <img 
-                      src="https://i.ibb.co/xSHy6LzN/elife-logo.png" 
-                      alt="Logotipo Oficial Elife Fitness" 
-                      className="h-8 sm:h-12 w-auto max-w-[180px] sm:max-w-none object-contain select-none brightness-95 mx-auto sm:mx-0" 
-                      referrerPolicy="no-referrer" 
-                    />
-                    <div className="space-y-0.5">
-                      <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase block leading-tight">Identidade de Marca Homologada</span>
-                      <span className="text-[9px] font-medium text-slate-400 block">Indaiatuba, SP</span>
-                    </div>
+              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 w-full relative z-10">
+                {/* Majestic Master Symbol */}
+                <div className="bg-white/5 p-6 rounded-[1.5rem] border border-white/10 shadow-inner flex items-center justify-center transition-all group-hover:scale-105 group-hover:border-white/20 duration-500 w-full sm:w-auto shrink-0">
+                  <img 
+                    src="https://i.ibb.co/1fF3M1m6/elife-simbolo.png" 
+                    alt="Símbolo Oficial Elife Fitness" 
+                    className="w-20 h-20 sm:w-24 sm:h-24 object-contain select-none filter drop-shadow-2xl mx-auto brightness-200" 
+                    referrerPolicy="no-referrer" 
+                  />
+                </div>
+                
+                <div className="w-16 h-px sm:w-px sm:h-24 bg-white/10 block sm:hidden rounded-full my-2" />
+                <div className="w-px h-24 bg-gradient-to-b from-transparent via-white/20 to-transparent hidden sm:block" />
+                
+                {/* Logotype Display */}
+                <div className="flex flex-col justify-center text-center sm:text-left space-y-3 w-full sm:w-auto">
+                  <span className="text-[10px] font-bold text-teal-400/80 tracking-[0.2em] uppercase block leading-tight">Entity Investigada</span>
+                  <img 
+                    src="https://i.ibb.co/xSHy6LzN/elife-logo.png" 
+                    alt="Logotipo Oficial Elife Fitness" 
+                    className="h-9 sm:h-11 w-auto max-w-[200px] sm:max-w-none object-contain select-none brightness-200 mx-auto sm:mx-0 drop-shadow-xl" 
+                    referrerPolicy="no-referrer" 
+                  />
+                  <div className="flex items-center justify-center sm:justify-start gap-2 pt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[10px] font-medium text-slate-400 tracking-wider">Mapeamento Concluído</span>
                   </div>
                 </div>
               </div>
-
-              <p className="text-slate-300/80 text-sm sm:text-base max-w-2xl leading-relaxed pt-2">
-                Análise aprofundada de posicionamento, indexação de mecanismos de busca locais e mapeamento comercial em Indaiatuba, SP.
-              </p>
             </div>
 
-            {/* Interação com botões no Impresso para Download */}
-            <div className="flex flex-wrap gap-3 pt-2 print:hidden pb-1">
+            {/* Actions & Meta Grid */}
+            <div className="w-full pt-4 space-y-8">
               <button
                 onClick={handlePrint}
-                className="text-xs font-extrabold text-white bg-[#06A791] hover:bg-[#068472] border border-[#06A791]/40 px-5 py-3.5 rounded-xl transition-all flex items-center gap-2.5 cursor-pointer shadow-md shadow-emerald-950/20"
+                className="text-xs font-black text-[#0B1E1A] bg-gradient-to-r from-[#06E1C4] to-[#06A791] hover:from-[#08F5D6] hover:to-[#06C1A7] px-8 py-4 rounded-xl transition-all flex items-center gap-3 cursor-pointer shadow-xl shadow-[#06A791]/20 hover:shadow-2xl hover:shadow-[#06A791]/30 hover:-translate-y-0.5 duration-300 print:hidden"
               >
-                <FileText className="w-4 h-4 text-emerald-400" /> Gerar PDF do Diagnóstico Completo (A4)
+                <FileText className="w-4 h-4" /> Exportar Documento Oficial (PDF)
               </button>
-            </div>
 
-            {/* MicroMetadata */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-700/60 pb-1 text-xs text-slate-300 font-medium">
-              <div>
-                <span className="text-[10px] text-slate-400 block mb-0.5">Segmento:</span>
-                Moda Fitness Feminina
-              </div>
-              <div>
-                <span className="text-[10px] text-slate-400 block mb-0.5">Cidade base:</span>
-                Indaiatuba, SP
-              </div>
-              <div>
-                <span className="text-[10px] text-slate-400 block mb-0.5">Existência:</span>
-                Desde 2022
-              </div>
-              <div>
-                <span className="text-[10px] text-slate-400 block mb-0.5">Relatório gerado:</span>
-                Junho de 2025
+              {/* Minimal Meta Info */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-white/[0.08] text-xs text-slate-400 font-medium">
+                <div>
+                  <span className="text-[9px] text-teal-500/80 uppercase tracking-widest block mb-1.5">Segmento</span>
+                  <span className="text-white">Moda Fitness</span>
+                </div>
+                <div>
+                  <span className="text-[9px] text-teal-500/80 uppercase tracking-widest block mb-1.5">Localização</span>
+                  <span className="text-white">Indaiatuba, SP</span>
+                </div>
+                <div>
+                  <span className="text-[9px] text-teal-500/80 uppercase tracking-widest block mb-1.5">Atuação</span>
+                  <span className="text-white">Desde 2022</span>
+                </div>
+                <div>
+                  <span className="text-[9px] text-teal-500/80 uppercase tracking-widest block mb-1.5">Data Auditoria</span>
+                  <span className="text-white">Junho, 2025</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Score Circle Card */}
-          <div className="md:col-span-4 flex justify-center md:justify-end">
-            <div className="bg-slate-900/45 border border-slate-800 backdrop-blur-xs p-6 rounded-3xl text-center w-full max-w-[240px] space-y-3 shadow-md">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                Score Digital Atual
-              </span>
+          {/* Right Column: Premium Score Display */}
+          <div className="md:col-span-4 flex justify-center md:items-start md:justify-end h-full pt-8 md:pt-0">
+            <div className="bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.08] backdrop-blur-3xl p-8 rounded-[2.5rem] text-center w-full max-w-[280px] flex flex-col items-center justify-center gap-6 shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#DF5CBD]/50 to-transparent" />
               
-              <div className="flex items-baseline justify-center gap-1.5">
-                <span className="font-sans font-extrabold text-7xl text-[#DF5CBD] tracking-tight leading-none">
-                  3.2
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 block">
+                  Authoridade Local
                 </span>
-                <span className="text-slate-400 text-lg font-bold">/10</span>
+                <span className="text-[9px] font-medium text-slate-500 tracking-wider">
+                  Score de Presença
+                </span>
+              </div>
+              
+              <div className="flex items-start justify-center relative">
+                <span className="font-sans font-black text-8xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 tracking-tighter leading-none relative z-10">
+                  3<span className="text-6xl text-slate-500">.2</span>
+                </span>
+                <div className="absolute blur-2xl bg-[#DF5CBD]/20 w-24 h-24 rounded-full z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
               </div>
 
-              <div className="bg-[#DF5CBD]/10 border border-[#DF5CBD]/20 text-[#DF5CBD] font-bold text-xs py-1.5 px-3 rounded-full inline-block">
-                Invisibilidade Crítica
+              <div className="bg-[#DF5CBD]/10 border border-[#DF5CBD]/30 text-[#DF5CBD] font-bold text-xs py-2 px-4 rounded-full inline-block backdrop-blur-md shadow-lg shadow-[#DF5CBD]/10 tracking-wider">
+                Risco de Invisibilidade
               </div>
             </div>
           </div>
@@ -181,11 +201,13 @@ export default function App() {
       {/* Sub line color-gradient bar separator */}
       <div className="h-1.5 bg-gradient-to-r from-teal-500 via-emerald-600 to-pink-500" />
 
+      <FloatingNav />
+
       {/* Main Body */}
       <main className="max-w-5xl mx-auto px-4 md:px-6 py-12 space-y-12 print:py-4">
 
         {/* 01 — Executive summary */}
-        <section className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6">
+        <section id="resumo" className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6 scroll-mt-24">
           <div className="border-b border-slate-100 pb-5">
             <span className="text-xs font-bold uppercase tracking-widest text-[#06A791] block mb-1">
               01 — Resumo Executivo
@@ -198,7 +220,11 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div className="md:col-span-7 space-y-4">
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                A marca **Elife Fitness** possui ativos visuais deslumbrantes. O brandbook elaborado pela <span className="text-teal-700 font-semibold">GF Branding</span> definiu com maestria os elementos-chave: o logotipo autoral, o ícone abstrato de borboleta (transformação) e a elegante paleta cinza-teal e rosa vibrante.
+                A marca <strong className="text-slate-800">Elife Fitness</strong> possui ativos visuais deslumbrantes. O <Tooltip content="Manual técnico que define regras visuais, paleta de cores e forma de uso da tipografia.">
+                  <span className="cursor-help underline decoration-[#06A791]/30 underline-offset-4 font-bold text-[#193E39]">brandbook</span>
+                </Tooltip> elaborado pela <span className="text-teal-700 font-semibold">GF Branding</span> definiu com maestria os elementos-chave: o <Tooltip content="Assinatura gráfica principal, desenvolvida de maneira única para a marca.">
+                  <span className="cursor-help underline decoration-[#06A791]/30 underline-offset-4 font-bold text-[#193E39]">logotipo autoral</span>
+                </Tooltip>, o ícone abstrato de borboleta (transformação) e a elegante paleta cinza-teal e rosa vibrante.
               </p>
               
               <p className="text-slate-700 font-medium text-sm sm:text-base leading-relaxed p-4 bg-emerald-50 rounded-2xl border border-emerald-100/60">
@@ -255,7 +281,7 @@ export default function App() {
         </section>
 
         {/* 01b — Score metrics block */}
-        <section className="space-y-6">
+        <section id="metricas" className="space-y-6 scroll-mt-24">
           <div className="flex justify-between items-end">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[#06A791]">
@@ -287,7 +313,7 @@ export default function App() {
         </section>
 
         {/* 02 — Identidade de marca */}
-        <section className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6 page-break-before">
+        <section id="ativos" className="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6 page-break-before scroll-mt-24">
           <div className="border-b border-slate-100 pb-5">
             <span className="text-xs font-bold uppercase tracking-widest text-[#06A791] block mb-1">
               02 — Atuais Ativos e Atenção
@@ -310,7 +336,7 @@ export default function App() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span>Storytelling excelente com o ícone borboleta (evolução feminina).</span>
+                  <span><Tooltip content="Ato de transmitir a mensagem da marca de forma narrativa, conectando-se emocionalmente com o público."><span className="cursor-help underline decoration-emerald-500/30 underline-offset-4 border-b border-dashed border-emerald-300">Storytelling</span></Tooltip> excelente com o ícone borboleta (evolução feminina).</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
@@ -343,7 +369,7 @@ export default function App() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-rose-600 font-bold">•</span>
-                  <span>Funil que depende exclusivamente do Instagram Direct gera perdas de novos leads ocupados.</span>
+                  <span><Tooltip content="O trajeto (ou caminho) desenhado para conduzir o visitante do desconhecimento até o momento da compra."><span className="cursor-help underline decoration-rose-500/30 underline-offset-4 border-b border-dashed border-rose-300">Funil de Vendas</span></Tooltip> que depende exclusivamente do Instagram Direct gera perdas de novos leads ocupados.</span>
                 </li>
               </ul>
             </div>
@@ -351,7 +377,7 @@ export default function App() {
         </section>
 
         {/* 03 — SEO & GEO search test */}
-        <section className="bg-slate-900 text-white rounded-3xl p-6 lg:p-8 space-y-6 relative overflow-hidden page-break-before">
+        <section id="seo" className="bg-slate-900 text-white rounded-3xl p-6 lg:p-8 space-y-6 relative overflow-hidden page-break-before scroll-mt-24">
           <div className="absolute right-0 top-0 w-32 h-32 bg-teal-500/10 rounded-full blur-xl pointer-events-none" />
           
           <div className="border-b border-slate-800 pb-5">
@@ -395,26 +421,30 @@ export default function App() {
           <div className="p-4 bg-teal-950/40 border border-[#06A791]/20 rounded-2xl flex gap-3.5 mt-2">
             <span className="text-2xl mt-1">💡</span>
             <div>
-              <span className="font-bold text-teal-300 block text-sm">Oportunidade de Ouro: SEO Técnico e Local</span>
+              <span className="font-bold text-teal-300 block text-sm">Oportunidade de Ouro: <Tooltip content="Conjunto de melhorias no código do site (velocidade, segurança, navegação mobile) para aparecer melhor no Google sem depender das redes sociais."><span className="cursor-help underline decoration-[#DF5CBD]/40 underline-offset-4 border-b-2 border-transparent">SEO Técnico e Local</span></Tooltip></span>
               <p className="text-slate-300 text-xs leading-relaxed mt-0.5">
-                Nenhum concorrente de Indaiatuba utiliza ainda a combinação de **Indexação Avançada e Otimização Semântica (Schema.org LocalBusiness e Blog regional)**. Acelerar de forma profissional este planejamento estruturado coloca a Elife na vanguarda dos buscadores locais de forma absoluta.
+                Nenhum concorrente de Indaiatuba utiliza ainda a combinação de <Tooltip content="Técnica para fazer o seu site aparecer mais rápido e melhor posicionado no topo do Google.">
+                  <span className="cursor-help underline decoration-[#DF5CBD]/40 underline-offset-4 font-bold text-white">Indexação Avançada</span>
+                </Tooltip> e <Tooltip content="Uso de etiquetas lidas por robôs do Google, indicando exatamente onde fica sua loja e o que vende.">
+                  <span className="cursor-help underline decoration-[#DF5CBD]/40 underline-offset-4 font-bold text-white">Otimização Semântica (Schema.org LocalBusiness)</span>
+                </Tooltip>. Acelerar de forma profissional este planejamento estruturado coloca a Elife na vanguarda dos buscadores locais de forma absoluta.
               </p>
             </div>
           </div>
         </section>
 
         {/* 04 — Competitors table component */}
-        <section className="page-break-before">
+        <section id="competidores" className="page-break-before scroll-mt-24">
           <CompetitorTable />
         </section>
 
         {/* 05 — Timeline actions component */}
-        <section className="page-break-before">
+        <section id="timeline" className="page-break-before scroll-mt-24">
           <TimelineBoard />
         </section>
 
         {/* 06 — Packages proposals component */}
-        <section className="page-break-before">
+        <section id="propostas" className="page-break-before scroll-mt-24">
           <PackageCard />
         </section>
 
