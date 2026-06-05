@@ -51,7 +51,7 @@ export default function FloatingNav() {
   };
 
   return (
-    <nav className="fixed left-6 xl:left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-1.5 print:hidden backdrop-blur-3xl bg-white/60 p-2.5 rounded-[1.5rem] border border-white shadow-2xl shadow-slate-200/50">
+    <nav className="fixed left-3 xl:left-5 2xl:left-10 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-1.5 print:hidden backdrop-blur-3xl bg-white/60 p-2 rounded-[1.5rem] border border-white shadow-2xl shadow-slate-200/50">
       {SECTIONS.map((section) => {
         const isActive = activeSection === section.id;
         const Icon = section.icon;
@@ -65,8 +65,7 @@ export default function FloatingNav() {
             title={section.label}
           >
             <Icon className={`w-4 h-4 transition-colors ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-teal-600'}`} />
-            <span className={`text-[10px] font-extrabold uppercase tracking-widest whitespace-nowrap overflow-hidden transition-all duration-300 ease-out-expo
-              ${isActive ? 'w-[100px] sm:w-[120px] opacity-100 ml-1' : 'w-0 opacity-0 ml-0 group-hover:w-[100px] group-hover:opacity-100 group-hover:ml-1'} text-left`}
+            <span className="text-[10px] font-extrabold uppercase tracking-widest whitespace-nowrap overflow-hidden transition-all duration-300 ease-out-expo w-0 opacity-0 ml-0 group-hover:w-[100px] group-hover:sm:w-[120px] group-hover:opacity-100 group-hover:ml-2 text-left"
             >
               {section.label}
             </span>

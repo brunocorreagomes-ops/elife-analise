@@ -81,7 +81,7 @@ export default function App() {
       </nav>
 
       {/* Hero Cover Zone */}
-      <header className="bg-gradient-to-br from-[#091513] via-[#0F2823] to-[#184039] text-white py-20 md:py-32 px-6 relative overflow-hidden print:bg-slate-900 print:text-white print:py-16">
+      <header className="bg-gradient-to-br from-[#091513] via-[#0F2823] to-[#184039] text-white py-20 md:py-32 px-6 lg:px-16 xl:px-24 relative overflow-hidden print:bg-slate-900 print:text-white print:py-16">
         {/* Subtle decorative glows */}
         <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[#06A791]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-[#DF5CBD]/10 rounded-full blur-[120px] pointer-events-none" />
